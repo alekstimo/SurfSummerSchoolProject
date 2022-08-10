@@ -19,9 +19,19 @@ var window: UIWindow?
         return true
     }
     func goToMain(){
-        window?.rootViewController = TabBarConfigurator().configure()
+       window?.rootViewController = TabBarConfigurator().configure()
+        //window?.rootViewController = UIStoryboard(name: "SearchStoryBoard", bundle: .main).instantiateInitialViewController()
     }
     
 
 }
+
+//extension AppDelegate {
+//    static var shared: AppDelegate {
+//        return UIApplication.shared.delegate as! AppDelegate
+//    }
+//    var rootViewController: UI {
+//        return window!.rootViewController
+//    }
+//}
 

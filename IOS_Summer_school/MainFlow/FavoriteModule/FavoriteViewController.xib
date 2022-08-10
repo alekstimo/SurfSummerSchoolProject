@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEY-Wm-twv">
-                    <rect key="frame" x="376" y="103" width="20.5" height="20.5"/>
+                    <rect key="frame" x="376" y="59" width="20.5" height="20.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20.309999999999999" id="84Y-JX-Urg"/>
                         <constraint firstAttribute="width" constant="20.309999999999999" id="ays-CM-nmc"/>
@@ -32,10 +32,10 @@
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.19255337630779831" green="0.72924509406027194" blue="0.81993491545045449" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zEY-Wm-twv" secondAttribute="trailing" constant="17.690000000000001" id="1Jw-rt-IpT"/>
-                <constraint firstItem="zEY-Wm-twv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="59" id="iPo-Te-0tK"/>
+                <constraint firstItem="zEY-Wm-twv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="59" id="iPo-Te-0tK"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="65.625"/>
         </view>

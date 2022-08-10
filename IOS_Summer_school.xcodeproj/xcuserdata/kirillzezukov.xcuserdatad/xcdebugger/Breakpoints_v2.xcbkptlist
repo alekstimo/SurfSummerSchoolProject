@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "D5BF32FA-4A6C-4627-85D3-A20F8BE0BCF0"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65CB3481-C267-40A3-B8E1-510AE7D00733"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOS_Summer_school/MainFlow/MainModule/Cells/MainItemCollectionViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "MainItemCollectionViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "65CB3481-C267-40A3-B8E1-510AE7D00733 - ac48de214ad9162a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Summer_school.MainItemCollectionViewCell.favoriteButton.getter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "IOS_Summer_school"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirillzezukov/Documents/Surf/IOS_Summer_school/SurfSummerSchoolProject/IOS_Summer_school/MainFlow/MainModule/Cells/MainItemCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "65CB3481-C267-40A3-B8E1-510AE7D00733 - 94b61888f16a024e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Summer_school.MainItemCollectionViewCell.favoriteButton.setter : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "IOS_Summer_school"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirillzezukov/Documents/Surf/IOS_Summer_school/SurfSummerSchoolProject/IOS_Summer_school/MainFlow/MainModule/Cells/MainItemCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "65CB3481-C267-40A3-B8E1-510AE7D00733 - 25f2bf4ff68147d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Summer_school.MainItemCollectionViewCell.favoriteButton.modify : Swift.Optional&lt;__C.UIButton&gt;"
+                  moduleName = "IOS_Summer_school"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirillzezukov/Documents/Surf/IOS_Summer_school/SurfSummerSchoolProject/IOS_Summer_school/MainFlow/MainModule/Cells/MainItemCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "65CB3481-C267-40A3-B8E1-510AE7D00733 - 564aef3ef7051119"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Summer_school.MainItemCollectionViewCell.favoriteButton.modify : Swift.Optional&lt;__C.UIButton&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "IOS_Summer_school"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirillzezukov/Documents/Surf/IOS_Summer_school/SurfSummerSchoolProject/IOS_Summer_school/MainFlow/MainModule/Cells/MainItemCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "65CB3481-C267-40A3-B8E1-510AE7D00733 - 8ec07f810bf4b0b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Summer_school.MainItemCollectionViewCell.init(frame: __C.CGRect) -&gt; IOS_Summer_school.MainItemCollectionViewCell"
+                  moduleName = "IOS_Summer_school"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirillzezukov/Documents/Surf/IOS_Summer_school/SurfSummerSchoolProject/IOS_Summer_school/MainFlow/MainModule/Cells/MainItemCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "306">
+               </Location>
+               <Location
+                  uuid = "65CB3481-C267-40A3-B8E1-510AE7D00733 - ce3fff3a20ceca58"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOS_Summer_school.MainItemCollectionViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;IOS_Summer_school.MainItemCollectionViewCell&gt;"
+                  moduleName = "IOS_Summer_school"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kirillzezukov/Documents/Surf/IOS_Summer_school/SurfSummerSchoolProject/IOS_Summer_school/MainFlow/MainModule/Cells/MainItemCollectionViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "214">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
