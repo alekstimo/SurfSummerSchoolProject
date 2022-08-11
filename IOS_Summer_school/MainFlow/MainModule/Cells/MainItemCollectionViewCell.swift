@@ -39,6 +39,14 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         return isFavorite ? Constants.favoriteSelected : Constants.favoriteNotSelected
     }
     
+    override var isHighlighted: Bool {
+        didSet{
+            UIView.animate(withDuration: 0.2){
+                self.contentView.transform = self.isHighlighted ? CGAffineTransform(scaleX: 0.98, y: 0.98) : .identity
+            }
+        }
+    }
+    
     //MARK: - properties
     var title: String = "" {
         didSet {

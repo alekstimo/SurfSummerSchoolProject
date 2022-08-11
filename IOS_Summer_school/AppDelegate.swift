@@ -23,14 +23,7 @@ var window: UIWindow?
        window?.rootViewController = TabBarConfigurator().configure()
         //window?.rootViewController = UIStoryboard(name: "SearchStoryBoard", bundle: .main).instantiateInitialViewController()
     }
-//    @objc func searchButtonTapped(){
-//        print("searchButtonTapped")
-//        let vc = SearchViewController()
-//        //vc.modalPresentationStyle = .overCurrentContext
-//        //self.present(vc,animated: true)
-//        print(window?.rootViewController?.navigationController)
-//        window?.rootViewController?.navigationController?.pushViewController(vc, animated: true)
-//    }
+
 
 }
 

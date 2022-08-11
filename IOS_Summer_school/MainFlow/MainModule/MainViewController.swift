@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MainViewController: UIViewController {
+final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
 
     // MARK: - Constants
     private enum Constants {
@@ -34,14 +34,19 @@ final class MainViewController: UIViewController {
         //model.loadPosts()
         model.items[5].isFavorite = true
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar()
+    }
+    
     //MARK: - SearchButton
-    @IBOutlet weak var SearchButton: UIButton!{
-    didSet{
-    let image = UIImage(named: "SearchButton")
-    SearchButton.setImage(image, for: .normal)
-    SearchButton.setTitle("", for: .normal)
-    }
-    }
+//    @IBOutlet weak var SearchButton: UIButton!{
+//    didSet{
+//    let image = UIImage(named: "SearchButton")
+//    SearchButton.setImage(image, for: .normal)
+//    SearchButton.setTitle("", for: .normal)
+//    }
+//    }
    
     
 //    @IBAction func SearchButtonPush(_ sender: UIButton) {
@@ -82,6 +87,16 @@ private extension MainViewController {
             }
         }
     }
+    
+    func configureNavigationBar(){
+        navigationItem.title = "Главная"
+        let searchButton = UIBarButtonItem(image: UIImage(named: "SearchButton"),
+                                         style: .plain, target: self,
+                                           action: #selector(self.searchButtonTapped))
+        navigationItem.rightBarButtonItem = searchButton
+        navigationItem.rightBarButtonItem?.tintColor = .black
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+    }
 
 }
 
@@ -121,7 +136,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailViewController(), animated: true)
+        let vc = DetailViewController()
+        vc.model = model.items[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

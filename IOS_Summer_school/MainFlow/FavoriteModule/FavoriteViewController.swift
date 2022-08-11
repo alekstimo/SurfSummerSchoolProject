@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FavoriteViewController: UIViewController {
+class FavoriteViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var SearchButton: UIButton!{
         didSet{
@@ -31,6 +31,23 @@ class FavoriteViewController: UIViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar()
+    }
+    
     
 
+}
+extension FavoriteViewController {
+    
+    func configureNavigationBar(){
+        navigationItem.title = "Избранное"
+        let searchButton = UIBarButtonItem(image: UIImage(named: "SearchButton"),
+                                         style: .plain, target: self,
+                                           action: #selector(self.searchButtonTapped))
+        navigationItem.rightBarButtonItem = searchButton
+        navigationItem.rightBarButtonItem?.tintColor = .black
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+    }
 }

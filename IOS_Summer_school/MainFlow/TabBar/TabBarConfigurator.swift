@@ -46,31 +46,23 @@ private extension TabBarConfigurator {
             let tabBarItem = UITabBarItem(title: tab.title, image: tab.image, selectedImage: tab.selectedImage)
             
             controller.tabBarItem = tabBarItem
-            //let division = getCurrentDivision(controller: controller)
-            let title = createTitleView(division: tab.title, center: controller.navigationController?.navigationBar.center) //ПОПЛЫЛО
-            
-            var selector = #selector(MainViewController.searchButtonTapped)
-            switch tab.title {
-            case "Избранное":
-                selector = #selector(FavoriteViewController.searchButtonTapped)
-            default:
-                selector = #selector(MainViewController.searchButtonTapped)
-            }
-            
-            let searchButton = createButton(controller: controller, selector: selector)
-            //selector: #selector(searchButtonTapped)
-            if (isSearchButtonActive(division: tab.title)) {
-                controller.navigationItem.rightBarButtonItem = searchButton
-            }
-            controller.navigationItem.titleView = title
-            controller.navigationController?.navigationBar.backgroundColor = .white
-            //controller.navigationController?.navigationBar =
             viewControllers.append(navigationController)
         }
         
 
         return viewControllers
     }
+    func getCurrentViewController (tab: TabBarModel) -> UIViewController{
+        switch tab {
+        case .main:
+            return MainViewController()
+        case .favorite:
+            return FavoriteViewController()
+        case .profile:
+            return ProfileViewController()
+        }
+    }
+}
 //    func getCurrentDivision(controller: UIViewController) -> String{
 //        switch controller {
 //        case MainViewController():
@@ -83,7 +75,7 @@ private extension TabBarConfigurator {
 //            return ""
 //        }
 //    }
-    
+    /*
     func isSearchButtonActive(division: String) -> Bool {
         
         switch division {
@@ -94,16 +86,7 @@ private extension TabBarConfigurator {
         }
     }
     
-    func getCurrentViewController (tab: TabBarModel) -> UIViewController{
-        switch tab {
-        case .main:
-            return MainViewController()
-        case .favorite:
-            return FavoriteViewController()
-        case .profile:
-            return ProfileViewController()
-        }
-    }
+    
     func createTitleView(division: String, center: CGPoint?) -> UIView {
         let view  = UIView()
         view.frame = CGRect(x: 0, y: 0, width: 280, height: 40)
@@ -142,6 +125,7 @@ private extension TabBarConfigurator {
         return menuBarItem
         
     }
+    */
     
     
     //Создать функцию принимающую выбраный раздел? по нему соориентировать наличие кнопки поиска и заголовок раздела, в этой функции сформировать массив элементов для navigation bar после чего помесить их в navigationItem.rightBarButtomItems
@@ -155,5 +139,23 @@ private extension TabBarConfigurator {
 //        return [title,searchButton]
 //    }
     
-}
+//let division = getCurrentDivision(controller: controller)
+
+
+//            let title = createTitleView(division: tab.title, center: controller.navigationController?.navigationBar.center) //ПОПЛЫЛО
+//
+//            var selector = #selector(MainViewController.searchButtonTapped)
+//            switch tab.title {
+//            case "Избранное":
+//                selector = #selector(FavoriteViewController.searchButtonTapped)
+//            default:
+//                selector = #selector(MainViewController.searchButtonTapped)
+//            }
+//
+//            let searchButton = createButton(controller: controller, selector: selector)
+//            //selector: #selector(searchButtonTapped)
+//            if (isSearchButtonActive(division: tab.title)) {
+//                controller.navigationItem.rightBarButtonItem = searchButton
+//            }
+//            controller.navigationItem.titleView = title
 
