@@ -17,6 +17,7 @@ final class MainViewController: UIViewController {
     }
 
     // MARK: - Private Properties
+    
     private let model: MainModel = .init()
 
     // MARK: - Views
@@ -43,12 +44,22 @@ final class MainViewController: UIViewController {
     }
    
     
-    @IBAction func SearchButtonPush(_ sender: UIButton) {
-        print("Push main search!")
-//        let sb = UIStoryboard(name: "Main",bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: "searchScreen")
-//        self.present(vc,animated: true,completion: nil)
+//    @IBAction func SearchButtonPush(_ sender: UIButton) {
+//        print("Push main search!")
+//        //let vc = SearchViewController()
+//        //vc.modalPresentationStyle = .overCurrentContext
+//        //self.present(vc,animated: true)
+//        //navigationController?.pushViewController(vc, animated: true)
+//    }
+    
+    @objc func searchButtonTapped(){
+        print("searchButtonTapped")
+        let vc = SearchViewController()
+        //vc.modalPresentationStyle = .overCurrentContext
+        //self.present(vc,animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
+    
 
 }
 
@@ -108,6 +119,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return Constants.spaceBetweenElements
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(DetailViewController(), animated: true)
+    }
+    
+    
     /*
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      super.prepare(for: segue, sender: sender)

@@ -23,9 +23,12 @@ class FavoriteViewController: UIViewController {
 
     }
 
-    
-    @IBAction func SearchButtonPush(_ sender: Any) {
-        print("Push!")
+    @objc func searchButtonTapped(){
+        print("searchButtonTappedFavorite")
+        let vc = SearchViewController()
+        //vc.modalPresentationStyle = .overCurrentContext
+        //self.present(vc,animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
