@@ -17,6 +17,8 @@
 		6E2E92C628A52426004A23D5 /* DetailTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E92C428A52426004A23D5 /* DetailTextTableViewCell.swift */; };
 		6E2E92C728A52426004A23D5 /* DetailTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2E92C528A52426004A23D5 /* DetailTextTableViewCell.xib */; };
 		6E2E92C928A52840004A23D5 /* DetailItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E92C828A52840004A23D5 /* DetailItemModel.swift */; };
+		6E2E92CD28A54A70004A23D5 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E92CB28A54A70004A23D5 /* FavoriteTableViewCell.swift */; };
+		6E2E92CE28A54A70004A23D5 /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E2E92CC28A54A70004A23D5 /* FavoriteTableViewCell.xib */; };
 		6E59CD8628A38E8100E95C39 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E59CD8428A38E8100E95C39 /* SearchViewController.swift */; };
 		6E59CD8728A38E8100E95C39 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E59CD8528A38E8100E95C39 /* SearchViewController.xib */; };
 		6E59CD8B28A3A90700E95C39 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E59CD8928A3A90700E95C39 /* DetailViewController.swift */; };
@@ -45,6 +47,8 @@
 		6E2E92C428A52426004A23D5 /* DetailTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextTableViewCell.swift; sourceTree = "<group>"; };
 		6E2E92C528A52426004A23D5 /* DetailTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTextTableViewCell.xib; sourceTree = "<group>"; };
 		6E2E92C828A52840004A23D5 /* DetailItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemModel.swift; sourceTree = "<group>"; };
+		6E2E92CB28A54A70004A23D5 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		6E2E92CC28A54A70004A23D5 /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		6E59CD8428A38E8100E95C39 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6E59CD8528A38E8100E95C39 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		6E59CD8928A3A90700E95C39 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,15 @@
 			path = textCell;
 			sourceTree = "<group>";
 		};
+		6E2E92CA28A54A3B004A23D5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6E2E92CB28A54A70004A23D5 /* FavoriteTableViewCell.swift */,
+				6E2E92CC28A54A70004A23D5 /* FavoriteTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		6E59CD8828A3A8B700E95C39 /* DetailModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +207,7 @@
 		6ECAA32528A16CD20046DDF9 /* FavoriteModule */ = {
 			isa = PBXGroup;
 			children = (
+				6E2E92CA28A54A3B004A23D5 /* Cells */,
 				6ECAA32628A16D010046DDF9 /* FavoriteViewController.swift */,
 				6ECAA32728A16D010046DDF9 /* FavoriteViewController.xib */,
 			);
@@ -291,6 +305,7 @@
 				6E81FFA728A1393000BE6F15 /* Assets.xcassets in Resources */,
 				6E2E92C228A52154004A23D5 /* DetailTitleTableViewCell.xib in Resources */,
 				6E1AE35B28A260D5008F24A5 /* MainItemCollectionViewCell.xib in Resources */,
+				6E2E92CE28A54A70004A23D5 /* FavoriteTableViewCell.xib in Resources */,
 				6E59CD8C28A3A90700E95C39 /* DetailViewController.xib in Resources */,
 				6E2E92C728A52426004A23D5 /* DetailTextTableViewCell.xib in Resources */,
 				6ECAA32928A16D010046DDF9 /* FavoriteViewController.xib in Resources */,
@@ -311,6 +326,7 @@
 				6E2E92C128A52154004A23D5 /* DetailTitleTableViewCell.swift in Sources */,
 				6E1AE35628A25796008F24A5 /* MainModel.swift in Sources */,
 				6ECAA31C28A152620046DDF9 /* MainViewController.swift in Sources */,
+				6E2E92CD28A54A70004A23D5 /* FavoriteTableViewCell.swift in Sources */,
 				6ECAA32028A155210046DDF9 /* ProfileViewController.swift in Sources */,
 				6E2E92C928A52840004A23D5 /* DetailItemModel.swift in Sources */,
 				6E2E92C628A52426004A23D5 /* DetailTextTableViewCell.swift in Sources */,
