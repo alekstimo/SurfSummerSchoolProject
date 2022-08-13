@@ -32,7 +32,7 @@ class FavoriteViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         configureApperance()
         configureModel()
-        model.getPosts()
+        //model.getPosts()
 
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +73,7 @@ private extension FavoriteViewController {
         collectionView.register(UINib(nibName: "\(FavoriteTableViewCell.self)", bundle: .main), forCellWithReuseIdentifier: "\(FavoriteTableViewCell.self)")
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
+        collectionView.contentInset = .init(top: 0, left: 16, bottom: 16, right: 16)
 
     }
     
@@ -97,17 +97,18 @@ extension FavoriteViewController: UICollectionViewDataSource, UICollectionViewDe
             let item = model.items[indexPath.row]
             cell.title = item.title
             cell.isFavorite = item.isFavorite
-            cell.image = item.image
-            cell.date = item.dataCreation
+            cell.imageUrlInString = item.imageUrlInString
+            cell.date = item.dateCreation
             cell.text = item.content
         }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 32, height: view.frame.height * 0.48)
+        let width = view.frame.width - 32
+        return CGSize(width: width, height: width * 1.18)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 24
+        return 16
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

@@ -13,18 +13,21 @@ class DetailImageTableViewCell: UITableViewCell {
     @IBOutlet private weak var cornImageView: UIImageView!
     
     //MARK: - Properties
-    var image: UIImage? {
-        didSet {
-            cornImageView.image = image
+    var imageUrlInString: String = "" {
+            didSet {
+                guard let url = URL(string: imageUrlInString) else {
+                    return
+                }
+                imageView?.loadImage(from: url)
+            }
         }
-    }
     
     //MARK: - UITableViewCell
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
-        cornImageView?.layer.cornerRadius = 12
-        cornImageView?.contentMode = .scaleAspectFill
+        cornImageView.layer.cornerRadius = 12
+        cornImageView.contentMode = .scaleAspectFill
     }
     
 }

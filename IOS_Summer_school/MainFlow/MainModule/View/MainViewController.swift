@@ -30,9 +30,12 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         configureApperance()
         configureModel()
-        model.getPosts()
-        //model.loadPosts()
-        model.items[5].isFavorite = true
+        //model.getPosts()
+        model.loadPosts()
+        //model.items[5].isFavorite = true
+        
+     
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -113,8 +116,8 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
             let item = model.items[indexPath.row]
             cell.title = item.title
             cell.isFavorite = item.isFavorite
-            cell.image = item.image
-            //cell.imageUrlInString = item.imageUrlInString
+            //cell.image = item.image
+            cell.imageUrlInString = item.imageUrlInString
             cell.didFavoriteTapped = { [weak self] in
                 self?.model.items[indexPath.row].isFavorite.toggle()
             }

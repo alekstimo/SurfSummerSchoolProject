@@ -37,11 +37,16 @@ class FavoriteTableViewCell: UICollectionViewCell {
             cortTitle.text = title
         }
     }
-    var image: UIImage? {
-        didSet {
-            cortImageView.image = image
-        }
-    }
+    
+    var imageUrlInString: String = "" {
+           didSet {
+               guard let url = URL(string: imageUrlInString) else {
+                   return
+               }
+               cortImageView.loadImage(from: url)
+           }
+       }
+    
     var isFavorite: Bool = true {
         didSet {
             favoriteButton.setImage(UIImage(named: "FavoriteSelected"), for: .normal)
