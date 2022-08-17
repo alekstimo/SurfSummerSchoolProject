@@ -18,7 +18,7 @@ class DetailImageTableViewCell: UITableViewCell {
                 guard let url = URL(string: imageUrlInString) else {
                     return
                 }
-                imageView?.loadImage(from: url)
+                cornImageView.loadImage(from: url)
             }
         }
     

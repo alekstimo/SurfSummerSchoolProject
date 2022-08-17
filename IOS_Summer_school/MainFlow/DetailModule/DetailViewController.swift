@@ -15,7 +15,7 @@ class DetailViewController: UIViewController, UIGestureRecognizerDelegate {
     private let tableView = UITableView()
 
     // MARK: - Properties
-    var model: DetailItemModel?
+    var model: DetailItemModel = .createDefault()
 
     // MARK: - UIViewController
     override func viewDidLoad() {
@@ -47,7 +47,7 @@ private extension DetailViewController {
     }
 
     func configureNavigationBar() {
-        navigationItem.title = model?.title
+        navigationItem.title = model.title
         let backButton = UIBarButtonItem(image: UIImage(named: "backArrow"),
                                          style: .plain,
                                          target: navigationController,
@@ -98,20 +98,20 @@ extension DetailViewController: UITableViewDataSource {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailImageTableViewCell.self)")
             if let cell = cell as? DetailImageTableViewCell {
-                cell.imageUrlInString = model?.imageUrlInString ?? ""
+                cell.imageUrlInString = model.imageUrlInString
             }
             return cell ?? UITableViewCell()
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailTitleTableViewCell.self)")
             if let cell = cell as? DetailTitleTableViewCell {
-                cell.title = model?.title ?? ""
-                cell.date = model?.dateCreation ?? ""
+                cell.title = model.title
+                cell.date = model.dateCreation
             }
             return cell ?? UITableViewCell()
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "\(DetailTextTableViewCell.self)")
             if let cell = cell as? DetailTextTableViewCell {
-                cell.text = model?.content
+                cell.text = model.content
             }
             return cell ?? UITableViewCell()
         default:

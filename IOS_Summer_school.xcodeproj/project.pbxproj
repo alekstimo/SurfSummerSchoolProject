@@ -36,6 +36,11 @@
 		6ECAA32928A16D010046DDF9 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6ECAA32728A16D010046DDF9 /* FavoriteViewController.xib */; };
 		6ECAA32D28A16E230046DDF9 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECAA32C28A16E230046DDF9 /* TabBarModel.swift */; };
 		6ECAA32F28A172690046DDF9 /* TabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ECAA32E28A172690046DDF9 /* TabBarConfigurator.swift */; };
+		6EEAC6FF28ABABF00074A1FA /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEAC6FE28ABABF00074A1FA /* SpinnerViewController.swift */; };
+		6EEAC71228ABF5570074A1FA /* InternetErrorStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEAC71028ABF5570074A1FA /* InternetErrorStateViewController.swift */; };
+		6EEAC71328ABF5570074A1FA /* InternetErrorStateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEAC71128ABF5570074A1FA /* InternetErrorStateViewController.xib */; };
+		6EEAC71728ACF34A0074A1FA /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEAC71528ACF34A0074A1FA /* EmptyViewController.swift */; };
+		6EEAC71828ACF34A0074A1FA /* EmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEAC71628ACF34A0074A1FA /* EmptyViewController.xib */; };
 		6EF50C1228A659C500DAB623 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF50C1128A659C500DAB623 /* NetworkTask.swift */; };
 		6EF50C1628A65E8900DAB623 /* BaseNetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF50C1528A65E8900DAB623 /* BaseNetworkTask.swift */; };
 		6EF50C1828A660AF00DAB623 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF50C1728A660AF00DAB623 /* NetworkMethod.swift */; };
@@ -82,6 +87,11 @@
 		6ECAA32728A16D010046DDF9 /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		6ECAA32C28A16E230046DDF9 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		6ECAA32E28A172690046DDF9 /* TabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarConfigurator.swift; sourceTree = "<group>"; };
+		6EEAC6FE28ABABF00074A1FA /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		6EEAC71028ABF5570074A1FA /* InternetErrorStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetErrorStateViewController.swift; sourceTree = "<group>"; };
+		6EEAC71128ABF5570074A1FA /* InternetErrorStateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InternetErrorStateViewController.xib; sourceTree = "<group>"; };
+		6EEAC71528ACF34A0074A1FA /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
+		6EEAC71628ACF34A0074A1FA /* EmptyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyViewController.xib; sourceTree = "<group>"; };
 		6EF50C1128A659C500DAB623 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
 		6EF50C1528A65E8900DAB623 /* BaseNetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkTask.swift; sourceTree = "<group>"; };
 		6EF50C1728A660AF00DAB623 /* NetworkMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
@@ -119,8 +129,8 @@
 		6E022DF728A79C68004ACF8E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6ECAA31B28A152620046DDF9 /* MainViewController.xib */,
 				6ECAA31A28A152620046DDF9 /* MainViewController.swift */,
+				6ECAA31B28A152620046DDF9 /* MainViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -228,6 +238,9 @@
 		6ECAA32228A16C4C0046DDF9 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				6EEAC71428ACF3200074A1FA /* EmptyModule */,
+				6EEAC70028ABC2900074A1FA /* InternetErrorState */,
+				6EEAC6FD28ABABA30074A1FA /* Spinner */,
 				6E59CD8828A3A8B700E95C39 /* DetailModule */,
 				6ECAA33028A184970046DDF9 /* SearchModel */,
 				6ECAA32B28A16DBC0046DDF9 /* TabBar */,
@@ -294,6 +307,32 @@
 				6E59CD8528A38E8100E95C39 /* SearchViewController.xib */,
 			);
 			path = SearchModel;
+			sourceTree = "<group>";
+		};
+		6EEAC6FD28ABABA30074A1FA /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				6EEAC6FE28ABABF00074A1FA /* SpinnerViewController.swift */,
+			);
+			path = Spinner;
+			sourceTree = "<group>";
+		};
+		6EEAC70028ABC2900074A1FA /* InternetErrorState */ = {
+			isa = PBXGroup;
+			children = (
+				6EEAC71028ABF5570074A1FA /* InternetErrorStateViewController.swift */,
+				6EEAC71128ABF5570074A1FA /* InternetErrorStateViewController.xib */,
+			);
+			path = InternetErrorState;
+			sourceTree = "<group>";
+		};
+		6EEAC71428ACF3200074A1FA /* EmptyModule */ = {
+			isa = PBXGroup;
+			children = (
+				6EEAC71528ACF34A0074A1FA /* EmptyViewController.swift */,
+				6EEAC71628ACF34A0074A1FA /* EmptyViewController.xib */,
+			);
+			path = EmptyModule;
 			sourceTree = "<group>";
 		};
 		6EF50C0E28A6597C00DAB623 /* Services */ = {
@@ -415,12 +454,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E81FFAA28A1393000BE6F15 /* LaunchScreen.storyboard in Resources */,
+				6EEAC71328ABF5570074A1FA /* InternetErrorStateViewController.xib in Resources */,
 				6E2E92BD28A51F24004A23D5 /* DetailImageTableViewCell.xib in Resources */,
 				6E81FFA728A1393000BE6F15 /* Assets.xcassets in Resources */,
 				6E2E92C228A52154004A23D5 /* DetailTitleTableViewCell.xib in Resources */,
 				6E1AE35B28A260D5008F24A5 /* MainItemCollectionViewCell.xib in Resources */,
 				6E2E92CE28A54A70004A23D5 /* FavoriteTableViewCell.xib in Resources */,
 				6E59CD8C28A3A90700E95C39 /* DetailViewController.xib in Resources */,
+				6EEAC71828ACF34A0074A1FA /* EmptyViewController.xib in Resources */,
 				6E2E92C728A52426004A23D5 /* DetailTextTableViewCell.xib in Resources */,
 				6ECAA32928A16D010046DDF9 /* FavoriteViewController.xib in Resources */,
 				6ECAA32128A155210046DDF9 /* ProfileViewController.xib in Resources */,
@@ -438,8 +479,11 @@
 			files = (
 				6E2E92BC28A51F24004A23D5 /* DetailImageTableViewCell.swift in Sources */,
 				6E2E92C128A52154004A23D5 /* DetailTitleTableViewCell.swift in Sources */,
+				6EEAC71728ACF34A0074A1FA /* EmptyViewController.swift in Sources */,
 				6EF50C2D28A6817D00DAB623 /* BaseTokenStorage.swift in Sources */,
+				6EEAC71228ABF5570074A1FA /* InternetErrorStateViewController.swift in Sources */,
 				6E022DF628A79B56004ACF8E /* UIImageView+ImageLoader.swift in Sources */,
+				6EEAC6FF28ABABF00074A1FA /* SpinnerViewController.swift in Sources */,
 				6E1AE35628A25796008F24A5 /* MainModel.swift in Sources */,
 				6ECAA31C28A152620046DDF9 /* MainViewController.swift in Sources */,
 				6EF50C1D28A6746300DAB623 /* AuthResponseModel.swift in Sources */,

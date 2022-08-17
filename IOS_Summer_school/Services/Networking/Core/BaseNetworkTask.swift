@@ -47,35 +47,46 @@ struct BaseNetworkTask<AbstractInput: Encodable, AbstractOutput: Decodable>: Net
             
             let request = try getRequest(with: input)
             
-            if let cachedResponse =  try getCachedResponseFromCache(by: request) {
-                let mappedModel = try JSONDecoder().decode(AbstractOutput.self, from: cachedResponse.data)
-                onResponseReceived(.success(mappedModel))
-                
-                return
-            }
+            
             session.dataTask(with: request) { data, response, error in
                 
                 if let error = error {
                     onResponseReceived(.failure(error))
+                    isLoadedSucces = false
                 } else if let data = data {
                     
                     do {
                         let mappedModel = try JSONDecoder().decode(AbstractOutput.self, from: data)
                         onResponseReceived(.success(mappedModel))
                         saveResponseToCache(response, cachedData: data, by: request)
+                        isLoadedSucces = true
                     } catch {
+                        
                         onResponseReceived(.failure(error))
+                        isLoadedSucces = false
                     }
                     
                 } else {
                     onResponseReceived(.failure(NetworkTaskErorr.unknownError))
+                    isLoadedSucces = false
                 }
                 
             }
+            
             .resume()
+            if(isLoadedSucces) {
+                return
+            }
+            if let cachedResponse =  try getCachedResponseFromCache(by: request) {
+                let mappedModel = try JSONDecoder().decode(AbstractOutput.self, from: cachedResponse.data)
+                onResponseReceived(.success(mappedModel))
+                isLoadedSucces = false
+                return
+            }
        
         } catch {
             onResponseReceived(.failure(error))
+            isLoadedSucces = false
         }
         
     }

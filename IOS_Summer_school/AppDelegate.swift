@@ -7,10 +7,13 @@
 
 import UIKit
 
+var isLoadedSucces: Bool = false
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 var window: UIWindow?
+    
     
     var tokenStorage: TokenStorage {
         BaseTokenStorage()

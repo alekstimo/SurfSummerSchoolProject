@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 final class MainModel {
     
@@ -25,7 +26,8 @@ final class MainModel {
     
     //MARK: - Methods
     
-    func loadPosts() {
+    func loadPosts()  {
+        
             pictureService.loadPictures { [weak self] result in
                 switch result {
                 case .success(let pictures):
@@ -39,11 +41,19 @@ final class MainModel {
                         )
                     }
                 case .failure(let error):
-                    // TODO: - Implement error state there
+                    
                     break
+                    
+                    // TODO: - Implement error state there
+                   
                 }
             }
+        
         }
+    
+    func reloadData()  {
+        loadPosts()
+    }
     
 //    func getPosts(){
 //        items = Array(repeating: DetailItemModel.createDefault(), count: 100)

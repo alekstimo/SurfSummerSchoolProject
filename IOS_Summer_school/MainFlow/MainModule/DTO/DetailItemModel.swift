@@ -29,7 +29,7 @@ struct DetailItemModel {
             self.dateCreation = formatter.string(from: dateCreation)
         }
     
-    static func createDefault()-> DetailItemModel {
+    static func createDefault() -> DetailItemModel {
         .init(
             imageUrlInString: "",//UIImage(named: "FatCat"),
             title: "Толстые коты лечат",
