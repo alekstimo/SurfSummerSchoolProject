@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InternetErrorStateViewController" customModule="IOS_Summer_school" customModuleProvider="target">
+            <connections>
+                <outlet property="ErrorText" destination="21L-fM-z5a" id="NCq-Hv-qXH"/>
+                <outlet property="ErrorViewTop" destination="9fH-Mw-SSf" id="LgA-s0-MK5"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ec-sC-0U6" userLabel="ErrorState">
+                    <rect key="frame" x="0.0" y="-93" width="414" height="93"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21L-fM-z5a">
+                            <rect key="frame" x="65" y="45" width="284" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="Error"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="21L-fM-z5a" secondAttribute="trailing" constant="65" id="DMz-qa-Mt7"/>
+                        <constraint firstAttribute="height" constant="93" id="KLx-fb-SdX"/>
+                        <constraint firstItem="21L-fM-z5a" firstAttribute="centerX" secondItem="0Ec-sC-0U6" secondAttribute="centerX" id="UbA-Nr-vee"/>
+                        <constraint firstItem="21L-fM-z5a" firstAttribute="leading" secondItem="0Ec-sC-0U6" secondAttribute="leading" constant="65" id="WK9-qe-bXO"/>
+                        <constraint firstItem="21L-fM-z5a" firstAttribute="top" secondItem="0Ec-sC-0U6" secondAttribute="top" constant="45" id="gHZ-Qd-UYJ"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="21L-fM-z5a" secondAttribute="bottom" constant="8" id="tJf-3S-D2V"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="0Ec-sC-0U6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-93" id="9fH-Mw-SSf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="0Ec-sC-0U6" secondAttribute="leading" id="GTm-fK-avK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Ec-sC-0U6" secondAttribute="trailing" id="Kyl-B0-n3b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0Ec-sC-0U6" secondAttribute="bottom" priority="900" constant="700" id="xaZ-3I-dED"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="ep7-cf-E61" appends="YES" id="vud-7W-J9F"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="52"/>
+        </view>
+        <tapGestureRecognizer id="ep7-cf-E61">
+            <connections>
+                <action selector="ClosePan:" destination="-1" id="Hwu-mM-6fP"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <namedColor name="Error">
+            <color red="0.95163100960000002" green="0.34544590120000002" blue="0.34525889160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
