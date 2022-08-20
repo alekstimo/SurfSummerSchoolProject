@@ -12,7 +12,7 @@ class FavoriteTableViewCell: UICollectionViewCell {
     //MARK: - UICollectionViewCell
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureApperance() 
+        configureApperance()
     }
     
     //MARK: - Views

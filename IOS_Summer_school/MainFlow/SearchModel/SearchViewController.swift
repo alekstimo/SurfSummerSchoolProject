@@ -117,9 +117,7 @@ private extension SearchViewController {
         navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         searchBar.sizeToFit()
-        //searchBar.layer.cornerRadius = 22
         customSearchBar()
-        //searchBar.showsCancelButton = true
         searchBar.placeholder = "Поиск"
         navigationItem.titleView = searchBar
         
@@ -130,7 +128,6 @@ private extension SearchViewController {
         let searchField = searchBar.value(forKey: "searchField") as? UITextField
 
             if let field = searchField {
-                //field.backgroundColor = .systemGray
                 field.layer.cornerRadius = 22
                 field.textColor = .black
                 field.tintColor = .black

@@ -4,9 +4,9 @@
 //
 //
 //
-
 import Foundation
 import UIKit
+import SwiftUI
 
 final class MainModel {
     
@@ -15,7 +15,9 @@ final class MainModel {
     var didItemsUpdated: (() -> Void)?
     
     //MARK: - Properties
-    var items: [ItemModel] = [] {
+    
+    let pictureService = PictureService()
+    var items: [DetailItemModel] = [] {
         didSet {
             didItemsUpdated?()
         }
@@ -23,21 +25,33 @@ final class MainModel {
     
     //MARK: - Methods
     
-    func getPosts(){
-        items = Array(repeating: ItemModel.createDefault(), count: 100)
-    }
+    func loadPosts()  {
+        
+            pictureService.loadPictures { [weak self] result in
+                switch result {
+                case .success(let pictures):
+                    self?.items = pictures.map { pictureModel in
+                        DetailItemModel(
+                            imageUrlInString: pictureModel.photoUrl,
+                            title: pictureModel.title,
+                            isFavorite: false, // TODO: - Need adding `FavoriteService`
+                            content: pictureModel.content,
+                            dateCreation: pictureModel.date
+                        )
+                    }
+                case .failure(let error):
+                    
+                    break
+                    
+                    // TODO: - Implement error state there
+                   
+                }
+            }
+        
+        }
     
-}
-
-struct ItemModel {
-    let image: UIImage?
-    let title: String
-    var isFavorite: Bool
-    let dataCreation: String
-    let content: String
-    
-    static func createDefault()-> ItemModel {
-        .init(image: UIImage(named: "FatCat"), title: "Толстые коты лечат", isFavorite: false, dataCreation: "09.08.2022", content: "Ученые из Британии провели исследование, в котором установили, что чем больше масса вашего котика, тем полезнее его влияние на ваше здоровье.\n В период исследования были изучены 20 толстых котиков, масса которых превышает нормальную для их породы, помимо этого, были опрошены простые прохожие, и у 99 из 100 человек наблюдался выброс серотонина при взаимодействии с питомцем. \n Любите котиков и будете счастливы!")
+    func reloadData()  {
+        loadPosts()
     }
     
 }

@@ -2,7 +2,7 @@
 //  AuthResponseModel.swift
 //  IOS_Summer_school
 //
-//  
+//
 //
 
 import Foundation

@@ -9,6 +9,7 @@ import UIKit
 class InternetErrorStateViewController: UIViewController {
 
     
+    @IBOutlet weak var errorViewHeight: NSLayoutConstraint!
     @IBAction func ClosePan(_ sender: Any) {
         self.closeError()    }
     
@@ -25,7 +26,7 @@ class InternetErrorStateViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        errorViewHeight.constant = self.view.bounds.height * 0.1144
         
     }
     
@@ -37,7 +38,7 @@ class InternetErrorStateViewController: UIViewController {
     func closeError() {
         UIView.animate(withDuration: 0.5, delay: 0, options: [.transitionCurlUp], animations:  {
             
-            self.ErrorViewTop.constant = -93
+            self.ErrorViewTop.constant = -self.errorViewHeight.constant
             self.view.layoutIfNeeded()
             
         }) { _ in
@@ -55,15 +56,5 @@ class InternetErrorStateViewController: UIViewController {
 
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

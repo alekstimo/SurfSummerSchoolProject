@@ -2,7 +2,7 @@
 //  DetailItemModel.swift
 //  IOS_Summer_school
 //
-//  
+//
 //
 
 import Foundation
@@ -24,7 +24,7 @@ struct DetailItemModel {
             self.content = content
 
             let formatter = DateFormatter()
-            formatter.dateFormat = "dd.mm.yyyy"
+            formatter.dateFormat = "dd.MM.yyyy"
 
             self.dateCreation = formatter.string(from: dateCreation)
         }

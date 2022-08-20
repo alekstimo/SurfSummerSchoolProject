@@ -2,7 +2,7 @@
 //  MainViewController.swift
 //  IOS_Summer_school
 //
-//  
+//
 //
 
 import UIKit
@@ -20,10 +20,9 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     let refreshControl = UIRefreshControl()
     
     // MARK: - Private Properties
-   // private let loadIcon: UIActivityIndicatorView = .init()
+   
     private let model: MainModel = .init()
     private let child = SpinnerViewController()
-   // private let errorState = InternetErrorState()
 
     // MARK: - Views
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -34,7 +33,6 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         configureApperance()
         configureModel()
-        //model.getPosts()
             
         createSpinnerView()
        
@@ -47,44 +45,22 @@ final class MainViewController: UIViewController, UIGestureRecognizerDelegate {
             emptyView()
         }
         refreshControl.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
-        
         self.collectionView.addSubview(refreshControl)
         self.collectionView.alwaysBounceVertical = true
-        //model.items[5].isFavorite = true
-        
-     
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         configureNavigationBar()
     }
     
     //MARK: - SearchButton
-//    @IBOutlet weak var SearchButton: UIButton!{
-//    didSet{
-//    let image = UIImage(named: "SearchButton")
-//    SearchButton.setImage(image, for: .normal)
-//    SearchButton.setTitle("", for: .normal)
-//    }
-//    }
-   
-    
-//    @IBAction func SearchButtonPush(_ sender: UIButton) {
-//        print("Push main search!")
-//        //let vc = SearchViewController()
-//        //vc.modalPresentationStyle = .overCurrentContext
-//        //self.present(vc,animated: true)
-//        //navigationController?.pushViewController(vc, animated: true)
-//    }
     
     @objc func searchButtonTapped(){
-        print("searchButtonTapped")
+      
         let vc = SearchViewController()
-        //vc.modalPresentationStyle = .overCurrentContext
-        //self.present(vc,animated: true)
         navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @objc func refresh(_sender: AnyObject){
@@ -139,14 +115,13 @@ private extension MainViewController {
     
 
     func configureApperance() {
-        //navigationItem.title = "Главная"
+       
         collectionView.register(UINib(nibName: "\(MainItemCollectionViewCell.self)", bundle: .main),
                                 forCellWithReuseIdentifier: "\(MainItemCollectionViewCell.self)")
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInset = .init(top: 10, left: 16, bottom: 10, right: 16)
         
-       
     }
 
     func configureModel() {
@@ -212,19 +187,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    
-    /*
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     super.prepare(for: segue, sender: sender)
-     switch segue.identifier = ""
-     let vc = segue.destination as? MainViewController
-     */
-
-    /*func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = DetailViewController()
-        vc.model = model.items[indexPath.row]
-        navigationController?.pushViewController(vc, animated: true)
-    }*/
 
 }
 

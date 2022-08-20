@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="ErrorText" destination="21L-fM-z5a" id="NCq-Hv-qXH"/>
                 <outlet property="ErrorViewTop" destination="9fH-Mw-SSf" id="LgA-s0-MK5"/>
+                <outlet property="errorViewHeight" destination="KLx-fb-SdX" id="1WN-iv-Cy4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -62,7 +63,7 @@
     </objects>
     <resources>
         <namedColor name="Error">
-            <color red="0.95163100960000002" green="0.34544590120000002" blue="0.34525889160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.95294117647058818" green="0.34509803921568627" blue="0.34509803921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
