@@ -91,6 +91,7 @@ private extension MainViewController {
     
     func errorStateView(){
         let errorState = InternetErrorStateViewController()
+        errorState.configure(state: .internet)
         self.addChild(errorState)
         errorState.view.frame = self.view.frame
         self.view.addSubview(errorState.view)

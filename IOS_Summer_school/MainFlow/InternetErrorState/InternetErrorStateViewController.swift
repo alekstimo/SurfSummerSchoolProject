@@ -16,12 +16,17 @@ class InternetErrorStateViewController: UIViewController {
     @IBOutlet weak var ErrorViewTop: NSLayoutConstraint!
     @IBOutlet weak var ErrorText: UILabel!
     
+    enum errorState{
+        case internet
+        case wrongData
+    }
+    var errorData: String = " "
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         ErrorText.textColor = .white
-        ErrorText.text = "Отсутствует интернет-соединение \nПопробуйте позже"
+        ErrorText.text = errorData
         showError()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +38,14 @@ class InternetErrorStateViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
        
+    }
+    func configure(state: errorState)  {
+        switch state{
+        case .internet:
+            errorData = "Отсутствует интернет-соединение \nПопробуйте позже"
+        case .wrongData:
+            errorData = "Логин или пароль введен неправильно"
+        }
     }
     
     func closeError() {

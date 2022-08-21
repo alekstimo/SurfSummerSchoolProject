@@ -56,6 +56,7 @@ struct BaseNetworkTask<AbstractInput: Encodable, AbstractOutput: Decodable>: Net
                 } else if let data = data {
                     
                     do {
+                        
                         let mappedModel = try JSONDecoder().decode(AbstractOutput.self, from: data)
                         onResponseReceived(.success(mappedModel))
                         saveResponseToCache(response, cachedData: data, by: request)

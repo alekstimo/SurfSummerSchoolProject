@@ -31,21 +31,21 @@ var window: UIWindow?
         
         runLaunchScreen()
         
-        if let tokenContainer = try? tokenStorage.getToken(), !tokenContainer.isExpired {
-            goToMain()
-        } else {
-            let tempCredentials = AuthRequestModel(phone:"+71234567890", password:"qwerty")
+//        if let tokenContainer = try? tokenStorage.getToken(), !tokenContainer.isExpired {
+//            goToMain()
+//        } else {
+            let tempCredentials = AuthRequestModel(phone:UserSettings.userName ?? " ", password:UserSettings.password ?? " ")
             AuthService().perfomLoginRequest(credentials: tempCredentials) { [weak self] result in
                 switch result {
                 case .success:
                     self?.goToMain()
                 case .failure:
-                    //TODO: - token was not received
+                    self?.gotoSingUp()
                     break
                 }
             }
             //TODO: - auth
-        }
+        //}
         
     }
     
@@ -59,6 +59,12 @@ var window: UIWindow?
             self.window?.rootViewController = TabBarConfigurator().configure()
         }
     
+    }
+    func gotoSingUp(){
+        DispatchQueue.main.async {
+            let singUpVC = SignUpViewController()
+            self.window?.rootViewController = singUpVC
+        }
     }
 
 

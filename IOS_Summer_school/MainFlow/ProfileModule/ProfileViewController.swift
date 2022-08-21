@@ -26,15 +26,17 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureAlertView()
-        configureAppearance()
-        model.loadProfile()
-        configureModel()
+        
+        //model.loadProfile()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureNavigationBar()
+        configureAppearance()
         model.loadProfile()
+        configureModel()
     }
     
 }
@@ -50,9 +52,17 @@ private extension ProfileViewController {
     
     func configureAlertView(){
         
-//        alert.addAction(UIAlertAction(title: "ТУДА!", style: UIAlertAction.Style.default, handler: nil))
+
         alert.addAction(UIAlertAction(title: "Нет", style: UIAlertAction.Style.cancel, handler: nil))
-        let actionUpgrade = UIAlertAction.init(title: "Да, точно", style: .default, handler: nil)
+        let actionUpgrade = UIAlertAction.init(title: "Да, точно", style: .default, handler: { action in
+            
+            UserSettings.userName = ""
+            UserSettings.password = ""
+            let appDelegate  = UIApplication.shared.delegate as! AppDelegate
+            
+            let vc = SignUpViewController()
+            appDelegate.window?.rootViewController = vc
+        })
         alert.addAction(actionUpgrade)
         alert.preferredAction = actionUpgrade
     }

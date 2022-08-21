@@ -34,6 +34,10 @@
 		6E6FCF7028B150D200DCF0DC /* ProfileTelephoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6FCF6E28B150D200DCF0DC /* ProfileTelephoneTableViewCell.swift */; };
 		6E6FCF7428B150DA00DCF0DC /* ProfileEmailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6FCF7228B150DA00DCF0DC /* ProfileEmailTableViewCell.swift */; };
 		6E6FCF7528B150DA00DCF0DC /* ProfileEmailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E6FCF7328B150DA00DCF0DC /* ProfileEmailTableViewCell.xib */; };
+		6E6FCF7928B2102400DCF0DC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6FCF7728B2102400DCF0DC /* SignUpViewController.swift */; };
+		6E6FCF7A28B2102400DCF0DC /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E6FCF7828B2102400DCF0DC /* SignUpViewController.xib */; };
+		6E6FCF7D28B24E1400DCF0DC /* FloatingLabelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6FCF7C28B24E1300DCF0DC /* FloatingLabelInput.swift */; };
+		6E6FCF8028B27DB200DCF0DC /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6FCF7F28B27DB200DCF0DC /* UserSettings.swift */; };
 		6E81FF9E28A1392600BE6F15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E81FF9D28A1392600BE6F15 /* AppDelegate.swift */; };
 		6E81FFA728A1393000BE6F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E81FFA628A1393000BE6F15 /* Assets.xcassets */; };
 		6E81FFAA28A1393000BE6F15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E81FFA828A1393000BE6F15 /* LaunchScreen.storyboard */; };
@@ -92,6 +96,10 @@
 		6E6FCF6E28B150D200DCF0DC /* ProfileTelephoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTelephoneTableViewCell.swift; sourceTree = "<group>"; };
 		6E6FCF7228B150DA00DCF0DC /* ProfileEmailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileEmailTableViewCell.swift; sourceTree = "<group>"; };
 		6E6FCF7328B150DA00DCF0DC /* ProfileEmailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileEmailTableViewCell.xib; sourceTree = "<group>"; };
+		6E6FCF7728B2102400DCF0DC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		6E6FCF7828B2102400DCF0DC /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		6E6FCF7C28B24E1300DCF0DC /* FloatingLabelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabelInput.swift; sourceTree = "<group>"; };
+		6E6FCF7F28B27DB200DCF0DC /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		6E81FF9A28A1392600BE6F15 /* IOS_Summer_school.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_Summer_school.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E81FF9D28A1392600BE6F15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E81FFA628A1393000BE6F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -275,6 +283,32 @@
 			path = EmailCell;
 			sourceTree = "<group>";
 		};
+		6E6FCF7628B2100000DCF0DC /* SignUpModule */ = {
+			isa = PBXGroup;
+			children = (
+				6E6FCF7B28B24DED00DCF0DC /* FloatingLabelInput */,
+				6E6FCF7728B2102400DCF0DC /* SignUpViewController.swift */,
+				6E6FCF7828B2102400DCF0DC /* SignUpViewController.xib */,
+			);
+			path = SignUpModule;
+			sourceTree = "<group>";
+		};
+		6E6FCF7B28B24DED00DCF0DC /* FloatingLabelInput */ = {
+			isa = PBXGroup;
+			children = (
+				6E6FCF7C28B24E1300DCF0DC /* FloatingLabelInput.swift */,
+			);
+			path = FloatingLabelInput;
+			sourceTree = "<group>";
+		};
+		6E6FCF7E28B27D9400DCF0DC /* UserDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				6E6FCF7F28B27DB200DCF0DC /* UserSettings.swift */,
+			);
+			path = UserDataStorage;
+			sourceTree = "<group>";
+		};
 		6E81FF9128A1392600BE6F15 = {
 			isa = PBXGroup;
 			children = (
@@ -305,6 +339,7 @@
 		6ECAA32228A16C4C0046DDF9 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				6E6FCF7628B2100000DCF0DC /* SignUpModule */,
 				6EEAC71428ACF3200074A1FA /* EmptyModule */,
 				6EEAC70028ABC2900074A1FA /* InternetErrorState */,
 				6EEAC6FD28ABABA30074A1FA /* Spinner */,
@@ -456,6 +491,7 @@
 		6EF50C2728A6808B00DAB623 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				6E6FCF7E28B27D9400DCF0DC /* UserDataStorage */,
 				6EF50C2828A680A500DAB623 /* TokenStorage.swift */,
 				6EF50C2A28A680E500DAB623 /* TokenContainer.swift */,
 				6EF50C2C28A6817D00DAB623 /* BaseTokenStorage.swift */,
@@ -536,6 +572,7 @@
 				6E2E92C728A52426004A23D5 /* DetailTextTableViewCell.xib in Resources */,
 				6ECAA32928A16D010046DDF9 /* FavoriteViewController.xib in Resources */,
 				6E6FCF6F28B150D200DCF0DC /* ProfileTelephoneTableViewCell.xib in Resources */,
+				6E6FCF7A28B2102400DCF0DC /* SignUpViewController.xib in Resources */,
 				6ECAA32128A155210046DDF9 /* ProfileViewController.xib in Resources */,
 				6ECAA31D28A152620046DDF9 /* MainViewController.xib in Resources */,
 				6E59CD8728A38E8100E95C39 /* SearchViewController.xib in Resources */,
@@ -562,12 +599,14 @@
 				6EF50C1D28A6746300DAB623 /* AuthResponseModel.swift in Sources */,
 				6E2E92CD28A54A70004A23D5 /* FavoriteTableViewCell.swift in Sources */,
 				6ECAA32028A155210046DDF9 /* ProfileViewController.swift in Sources */,
+				6E6FCF8028B27DB200DCF0DC /* UserSettings.swift in Sources */,
 				6EF50C1B28A673F000DAB623 /* AuthService.swift in Sources */,
 				6E6FCF7028B150D200DCF0DC /* ProfileTelephoneTableViewCell.swift in Sources */,
 				6EF50C2428A67CE200DAB623 /* EmptyModel.swift in Sources */,
 				6E2E92C928A52840004A23D5 /* DetailItemModel.swift in Sources */,
 				6EF50C1F28A6747A00DAB623 /* AuthRequestModel.swift in Sources */,
 				6EF50C2B28A680E500DAB623 /* TokenContainer.swift in Sources */,
+				6E6FCF7D28B24E1400DCF0DC /* FloatingLabelInput.swift in Sources */,
 				6E2E92C628A52426004A23D5 /* DetailTextTableViewCell.swift in Sources */,
 				6E022DF428A799E2004ACF8E /* ImageLoader.swift in Sources */,
 				6EF50C2928A680A500DAB623 /* TokenStorage.swift in Sources */,
@@ -575,6 +614,7 @@
 				6E59CD8628A38E8100E95C39 /* SearchViewController.swift in Sources */,
 				6EF50C2228A67CB300DAB623 /* PictureResponseModel.swift in Sources */,
 				6EF50C1228A659C500DAB623 /* NetworkTask.swift in Sources */,
+				6E6FCF7928B2102400DCF0DC /* SignUpViewController.swift in Sources */,
 				6E81FF9E28A1392600BE6F15 /* AppDelegate.swift in Sources */,
 				6E6FCF6328B1504500DCF0DC /* ProfileGeneralTableViewCell.swift in Sources */,
 				6EF50C1828A660AF00DAB623 /* NetworkMethod.swift in Sources */,
