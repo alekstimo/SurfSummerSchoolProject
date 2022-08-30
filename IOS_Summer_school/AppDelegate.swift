@@ -7,39 +7,67 @@
 
 import UIKit
 
+var isLoadedSucces: Bool = false
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 var window: UIWindow?
     
+    
+    var tokenStorage: TokenStorage {
+        BaseTokenStorage()
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        goToMain()
+        
+        startApplicationProccess()
         return true
     }
-    func goToMain(){
-       window?.rootViewController = TabBarConfigurator().configure()
-        //window?.rootViewController = UIStoryboard(name: "SearchStoryBoard", bundle: .main).instantiateInitialViewController()
+    
+    func startApplicationProccess() {
+        
+        runLaunchScreen()
+        
+//        if let tokenContainer = try? tokenStorage.getToken(), !tokenContainer.isExpired {
+//            goToMain()
+//        } else {
+            let tempCredentials = AuthRequestModel(phone:UserSettings.userName ?? " ", password:UserSettings.password ?? " ")
+            AuthService().perfomLoginRequest(credentials: tempCredentials) { [weak self] result in
+                switch result {
+                case .success:
+                    self?.goToMain()
+                case .failure:
+                    self?.gotoSingUp()
+                    break
+                }
+            }
+            //TODO: - auth
+        //}
+        
     }
-//    @objc func searchButtonTapped(){
-//        print("searchButtonTapped")
-//        let vc = SearchViewController()
-//        //vc.modalPresentationStyle = .overCurrentContext
-//        //self.present(vc,animated: true)
-//        print(window?.rootViewController?.navigationController)
-//        window?.rootViewController?.navigationController?.pushViewController(vc, animated: true)
-//    }
+    
+    func runLaunchScreen() {
+        let launchScreenViewController = UIStoryboard(name: "LaunchScreen", bundle: .main).instantiateInitialViewController()
+        window?.rootViewController = launchScreenViewController
+    }
+    
+    func goToMain(){
+        DispatchQueue.main.async {
+            self.window?.rootViewController = TabBarConfigurator().configure()
+        }
+    
+    }
+    func gotoSingUp(){
+        DispatchQueue.main.async {
+            let singUpVC = SignUpViewController()
+            self.window?.rootViewController = singUpVC
+        }
+    }
+
 
 }
 
-//extension AppDelegate {
-//    static var shared: AppDelegate {
-//        return UIApplication.shared.delegate as! AppDelegate
-//    }
-//    var rootViewController: UI {
-//        return window!.rootViewController
-//    }
-//}
 

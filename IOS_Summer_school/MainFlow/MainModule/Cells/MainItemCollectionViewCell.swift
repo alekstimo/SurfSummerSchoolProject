@@ -10,9 +10,6 @@ import UIKit
 class MainItemCollectionViewCell: UICollectionViewCell {
 
     //MARK: - UICollectionViewCell
-    /*override func prepareForReuse() {
-        super.prepareForReuse()
-    }*/
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,17 +36,30 @@ class MainItemCollectionViewCell: UICollectionViewCell {
         return isFavorite ? Constants.favoriteSelected : Constants.favoriteNotSelected
     }
     
+    override var isHighlighted: Bool {
+        didSet{
+            UIView.animate(withDuration: 0.2){
+                self.contentView.transform = self.isHighlighted ? CGAffineTransform(scaleX: 0.98, y: 0.98) : .identity
+            }
+        }
+    }
+    
     //MARK: - properties
     var title: String = "" {
         didSet {
             titleLabel.text = title
         }
     }
-    var image: UIImage? {
-        didSet {
-            imageView.image = image
-        }
-    }
+    
+    var imageUrlInString: String = "" {
+           didSet {
+               guard let url = URL(string: imageUrlInString) else {
+                   return
+               }
+               imageView.loadImage(from: url)
+           }
+       }
+    
     var isFavorite: Bool = false {
         didSet {
             favoriteButton.setImage(buttonImage, for: .normal)
